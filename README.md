@@ -1,2 +1,4 @@
 # SFIT_TradeSystemEngine
-This is a trade system of futures
+This is a trade system of futures.
+
+Edwin cai
