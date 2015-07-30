@@ -76,6 +76,7 @@ cache 20
             
             ReqOrderInsert_d.update(order)
             self.__cursor__.execute(sqlStr, ReqOrderInsert_d)
+            self.__db__.commit()##########
             return True
         except Exception as e:
             self.__cursor__.execute('rollback to '+ rollBackPoint)
@@ -397,13 +398,6 @@ if __name__ == '__main__':
                        'SettlementID': 1, 
                      }
 
-        #print order.resetSequence('ORDERSYSID_AUTOINC_SEQ')
-        #order.insertOrderBookList(orderDict)
-        print order.insertOrder(orderDict)
-        #print order.insertOrder_a(orderDict)
-        #print order.selectTradeRecord(11)
-        #print order.selectOrder('000000000010')
-        #order.updateVolumeOrderBookList('000000000002', 20)
-        #print order.positionRecordExist(position)
-        #order.updatePosition(position)
+        print order.insertOrder(orderDict, 'savaPoint')
+
 
